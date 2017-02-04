@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="test1.css">
+        <script>
+        /*
+        I want this to create "user based art" around what they give the browser
+        so the time of day they are visiting, where they are, things like that.
+        Something simple to show I can get them and display them.
+        */
+
+        /*** Return RGB function
+        ** Parameters: Current hour of the day, in 24 hour time.
+        ** Method:  converts the hour of day into an elongated SIN graph,
+        **          allowing the RGB color to change up to mid day and return by midnight
+        ** returns: Nothing, changes background color.
+        **/
+        function returnRGB(hourOfDay) {
+            var sinVersion = Math.sin(hourOfDay/7.5)*10;
+            var rVal = Math.floor(sinVersion*28);
+            var gVal = Math.floor(sinVersion*21);
+            var bVal = Math.floor(sinVersion*0);
+            document.body.style.backgroundColor='rgb(' + rVal + ',' + gVal + ',' + bVal + ')';
+        }
+
+        /** Current Background function
+        **  Parameters: None
+        **  Method:     +Gets date from user,
+        **              +creates document space,
+        **              +calls returnRGB function with hours as parameter.
+        **/
+        function currentBackground() {
+            var toDay = new Date();
+            var dayHours = toDay.getHours();
+            document.write("<whiteTxt>"+toDay+"</whiteTxt>");
+            returnRGB(dayHours);
+        }
+
+        function moveMe() {
+            moveBy(10,100);
+        }
+
+        /*** Name Storing function
+        **  Parameters: None
+        **  Method: +Asks user for prompt of name
+        **          +Stores name as variable to be put in database
+        **          +Says "hello"
+        ***/
+        function nameStorer() {
+            var usrName = prompt("Enter your name, please.", "..");
+            if (usrName != undefined) {
+                document.write("<cornTxt><br>" + usrName[0] + "</cornTxt");
+                moveMe();
+            }
+        }
+
+
+
+        currentBackground();
+        nameStorer();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
