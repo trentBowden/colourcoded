@@ -42,18 +42,25 @@
         /*** Name Storing function
         **  Parameters: None
         **  Method: +Asks user for prompt of name
-        **          +Stores name as variable to be put in database
-        **          +Says "hello"
+        **          +Stores name as variable "usrName"
+        **          +Writes the string to local storage under identifier "inputName"
+        **          +
         ***/
         function nameStorer() {
-            var usrName = prompt("Enter your name, please.", "..");
+            //localStorage.removeItem("inputName"); can be used.
+
+            //Setting if non existant
+            if (!(localStorage.getItem('inputName'))) {
+                var userInput = prompt("Enter your name, please.", "..");
+                localStorage.setItem('inputName', userInput);
+            }
+
+            //Getting when existant
+            var usrName = localStorage.getItem("inputName");
             if (usrName != undefined) {
                 document.write("<cornTxt><br>" + usrName[0] + "</cornTxt");
-                moveMe();
             }
         }
-
-
 
         currentBackground();
         nameStorer();
