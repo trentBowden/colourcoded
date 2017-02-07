@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="test1.css">
+        <div id="animationObj"> </div>
         <script>
         /*
         I want this to create "user based art" around what they give the browser
@@ -35,37 +36,74 @@
             returnRGB(dayHours);
         }
 
-        function moveMe() {
-            moveBy(10,100);
-        }
-
         /*** Name Storing function
         **  Parameters: None
-        **  Method: +Asks user for prompt of name
+        **  Method: +(If no local storage) Asks user for prompt of name
         **          +Stores name as variable "usrName"
         **          +Writes the string to local storage under identifier "inputName"
-        **          +
+        **          +Displays first letter of name on screen
         ***/
         function nameStorer() {
-            //localStorage.removeItem("inputName"); can be used.
-
-            //Setting if non existant
             if (!(localStorage.getItem('inputName'))) {
                 var userInput = prompt("Enter your name, please.", "..");
                 localStorage.setItem('inputName', userInput);
             }
-
-            //Getting when existant
             var usrName = localStorage.getItem("inputName");
             if (usrName != undefined) {
                 document.write("<cornTxt>" + usrName[0] + "</cornTxt");
             }
         }
 
+        /*** Animation Station
+        **  Parameters: None
+        **  Method:     +New var Recieves element via the ID of "animationObj"
+        **              +Var created for position, set to 0 for initial. (this is a counter)
+        **              +Setinterval() used to call a function every set amount of time.
+        **                   Parameters: Function to call (NEWFRAME fnc), milliseconds between calls
+        **              +Sets initial location of animation object
+        **/
+
+        function animationStation() {
+            var animObj = document.getElementById("animationObj");
+            var currPos = 0;
+            var tween = setInterval(newFrame, 50);
+
+
+        /*** NEW FRAME function
+        ** Parameters:  None
+        ** Method:      +If the position variable exceeds a certain value (350)
+        **                  -> Clear the interval timer (parameters: timer ID)
+        **              +If position variable has not exceeded
+        **                  -> Increase position counter, assign pos val +1 to elem.style.top
+        **/
+
+        function newFrame() {
+            if (currPos==300) {
+                clearInterval(tween);
+                } else {
+                    currPos+=.1;
+                    var windowWidth = document.documentElement.clientWidth;
+                    var windowHeight = document.documentElement.clientHeight;
+                    animObj.style.top = windowHeight/2 + Math.sin(currPos)*200;
+                    animObj.style.left = windowWidth/2 + Math.cos(currPos)*200;
+                }
+            }
+        }
+
+
+        /*** Calling functions
+        **      +First, call for background to be changed
+        **      +Second, prompt for name from user
+        **      +Third, load animation
+        **/
+
         currentBackground();
         nameStorer();
+        animationStation();
+
         </script>
     </head>
     <body>
+
     </body>
 </html>
