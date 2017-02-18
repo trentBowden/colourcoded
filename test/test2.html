@@ -7,17 +7,26 @@
         /*
         This is the second test file, I want to keep the background, but create a microphone input based entry system. That is, the user needs to scream to continue.
         */
-
+        var loud;
         function setup() {
             createCanvas(windowWidth,windowHeight);
             mic = new p5.AudioIn();
             mic.start();
+            loud = false;
         }
 
         function draw() {
-            background(255-hour(),150,200);
             var volume = mic.getLevel();
-            ellipse((windowWidth/2)-50,(windowHeight/2)-50, volume*500, volume*500);
+            if ((volume>(.3))||loud) {
+                loud = true;
+                background(255-hour(),0,0);
+            } else {
+                background(255-hour(),150,200);
+            }
+
+            ellipse((windowWidth/2)-50,(windowHeight/2)-50,(volume*500)+100, (volume*500)+100);
+            noFill();
+            ellipse((windowWidth/2)-50,(windowHeight/2)-50, 400, 400);
         }
 
         </script>
