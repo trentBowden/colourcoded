@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="test1.css">
+        <script src="p5.min.js"></script>
+        <script src="p5.sound.min.js"></script>
+        <script>
+        /*
+        This is the second test file, I want to keep the background, but create a microphone input based entry system. That is, the user needs to scream to continue.
+        */
+
+        function setup() {
+            createCanvas(windowWidth,windowHeight);
+            mic = new p5.AudioIn();
+            mic.start();
+        }
+
+        function draw() {
+            background(255-hour(),150,200);
+            var volume = mic.getLevel();
+            ellipse((windowWidth/2)-50,(windowHeight/2)-50, volume*500, volume*500);
+        }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
