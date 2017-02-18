@@ -90,6 +90,36 @@
             }
         }
 
+        /** hasGetUserMedia
+        **  This function will check if the user can give us data!
+        ** If not, we will display an alert telling the user.
+        **/
+
+        function hasGetUserMedia() {
+          return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                    navigator.mozGetUserMedia || navigator.msGetUserMedia);
+        }
+        if (!(hasGetUserMedia())) {
+          alert('oh no! You cannot interact with everything on this website. Sorry!');
+      } else {
+          //getUserMedia (constraints/success/error)
+             navigator.getUserMedia({ audio: true, video: { width: 1280, height: 720 } },
+                function(stream) {
+                   console.log("Accessed the Microphone");
+                },
+                function(err) {
+                   console.log("The following error occured: " + err.name);
+      }
+
+        function audioInput() {
+
+            if (navigator.getUserMedia)
+                );
+            } else {
+               console.log("getUserMedia not supported");
+            }
+        }
+
 
         /*** Calling functions
         **      +First, call for background to be changed
