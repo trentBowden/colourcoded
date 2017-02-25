@@ -55,6 +55,11 @@ body {
     background-color: rgb(120,180,170);
     color: white;
 }
+#innerBoxCenter {
+    height: 200px;
+    width: 200px;
+    background-color: black;
+}
 /* unvisited link */
 a:link {
     color: black;
