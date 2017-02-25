@@ -16,15 +16,17 @@ body {
     height: 15vh;
 }
 #displayBox {
-    height: 50vh;
+    height: 20vw;
     width: 50%;
     background-color: rgb(140,200,190);
     border: 5px solid rgb(236,232,211);
     padding: 25px;
     text-align: center;
     margin: auto;
+    max-height: 40vw;
 }
-#innerBoxLeft {
+.innerBoxLeft {
+    display:block;
     float: left;
     margin:5px;
     height: 40%;
@@ -32,8 +34,14 @@ body {
     background-color: rgb(150,210,200);
     text-align: center;
     padding-top: 10%;
+    max-height: 10vw;
 }
-#innerBoxRight {
+.innerBoxLeft:hover {
+    background-color: rgb(120,180,170);
+    color: white;
+}
+.innerBoxRight {
+    display:block;
     float: right;
     margin:5px;
     height: 40%;
@@ -41,6 +49,23 @@ body {
     padding-top: 10%;
     background-color: rgb(150,210,200);
     text-align: center;
+    max-height: 10vw;
+}
+.innerBoxRight:hover {
+    background-color: rgb(120,180,170);
+    color: white;
+}
+/* unvisited link */
+a:link {
+    color: black;
+}
+/* visited link */
+a:visited {
+    color: black;
+}
+/* selected link */
+a:active {
+    color: black;
 }
 #horizLine {
      color: rgb(236,232,211);
