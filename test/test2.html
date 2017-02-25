@@ -3,13 +3,28 @@
         <link rel="stylesheet" href="test1.css">
         <script src="p5.min.js"></script>
         <script src="p5.sound.min.js"></script>
+        <script src="p5.geolocation.js"></script>
         <script>
         /*
         This is the second test file, I want to keep the background, but create a microphone input based entry system. That is, the user needs to scream to continue.
         */
         var loud;
+        var locationData;
+
+        function preload(){
+            locationData =  getCurrentPosition();
+        }
+
         function setup() {
+            if(!(geoCheck() == true)){console.add('failed to geoCheck');}
             createCanvas(windowWidth,windowHeight);
+            print(locationData.latitude)
+            print(locationData.longitude)
+            print(locationData.accuracy)
+            print(locationData.altitude)
+            print(locationData.altitudeAccuracy)
+            print(locationData.heading)
+            print(locationData.speed)
             mic = new p5.AudioIn();
             mic.start();
             loud = false;
