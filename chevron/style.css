@@ -12,6 +12,9 @@ body {
     width: 100%;
     margin: 0;
 }
+#spacer {
+    height: 15vh;
+}
 #displayBox {
     height: 50vh;
     width: 50%;
@@ -21,20 +24,37 @@ body {
     text-align: center;
     margin: auto;
 }
-#innerBox {
+#innerBoxLeft {
     float: left;
     margin:5px;
     height: 40%;
-    width: 40%;
+    width: 42%;
     background-color: rgb(150,210,200);
-    padding: 5px;
+    text-align: center;
+    padding-top: 10%;
+}
+#innerBoxRight {
+    float: right;
+    margin:5px;
+    height: 40%;
+    width: 42%;
+    padding-top: 10%;
+    background-color: rgb(150,210,200);
     text-align: center;
 }
-#contrailOne {
+#horizLine {
+     color: rgb(236,232,211);
+     background: rgb(236,232,211);
+     width: 100%;
+     height: 5px;
+}
+#textSmall {
     font-family: 'Contrail One', cursive;
     font-size: 22px;
+    font-size: 3vw;
 }
-#openSans {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+#textLarge {
+    font-family: 'Contrail One', cursive;
+    font-size: 50px;
+    font-size: 4vw;
 }
