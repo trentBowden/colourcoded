@@ -1,9 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Contrail+One|Open+Sans');
+
 body {
     background:
-linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
-linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
-linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
-linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
-background-size: 100px 100px;
-background-color: #EC173A;
+    linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+    linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: #f1a0a8;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+#displayBox {
+    height: 50vh;
+    width: 50%;
+    background-color: rgb(140,200,190);
+    border: 5px solid rgb(236,232,211);
+    padding: 25px;
+    text-align: center;
+    margin: auto;
+}
+#innerBox {
+    float: left;
+    margin:5px;
+    height: 40%;
+    width: 40%;
+    background-color: rgb(150,210,200);
+    padding: 5px;
+    text-align: center;
+}
+#contrailOne {
+    font-family: 'Contrail One', cursive;
+    font-size: 22px;
+}
+#openSans {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
 }
