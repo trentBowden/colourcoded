@@ -16,7 +16,7 @@ body {
     height: 15vh;
 }
 #displayBox {
-    height: 20vw;
+    height: 100vw;
     width: 60%;
     background-color: rgb(140,200,190);
     border: 5px solid rgb(236,232,211);
